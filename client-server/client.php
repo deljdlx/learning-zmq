@@ -1,7 +1,7 @@
 <?php
 
 $host='tcp://127.0.0.1:5555';
-$message='hello world';
+$message='Client message at '.time();
 
 $context=new ZMQContext();
 $client=new ZMQSOcket($context, ZMQ::SOCKET_REQ);
@@ -14,9 +14,9 @@ $client->send($message);
 
 echo "Send ".$host."\n";
 
-echo $client->recv();
+echo 'Server sent : "'.$client->recv().'"'."\n";
 
-echo "Receive ".$host."\n";
+//echo "Receive ".$host."\n";
 
 
 

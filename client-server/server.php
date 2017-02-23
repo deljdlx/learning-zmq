@@ -14,9 +14,9 @@ while(true) {
 
 	$message=$server->recv();
 	
-	echo "Received ".$message."\n";
+	echo 'Received "'.$message.'"'."\n";
 	
-	$server->send('KTHXBAI');
+	$server->send('Server received "'.$message.'"');
 }
 
 
